@@ -30,9 +30,13 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody ReqLoginDto reqLoginDto) {
 
-        /*
-            user가 있으면 비밀번호 일치하는지 확인
-                비밀번호가 일치하면
+        /**
+         * UserService -> login()
+         * User객체 findByUsername
+         * user가 있으면 비밀번호 일치하는지 확인
+         * 비밀번호가 일치하면 JWT 응답
+         * JwtUtil -> secret 세팅
+         *
          */
 
         RespTokenDto respTokenDto = RespTokenDto.builder()

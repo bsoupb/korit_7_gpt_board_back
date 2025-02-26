@@ -30,5 +30,11 @@ public class UserRepository {
         return Optional.ofNullable(userMapper.select(user.getUsername()));
     }
 
+    public void updateProfileImg(int userId, String profileImg) {
+        userMapper.updateProfileImgById(userId, profileImg);
+    }
 
+    public void updateNickname(int userId, String nickname) {
+        userMapper.updateNicknameById(userId, nickname);
+    }
 }
