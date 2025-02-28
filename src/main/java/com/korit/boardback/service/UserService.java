@@ -43,7 +43,7 @@ public class UserService {
     private EmailService emailService;
 
     public User getUserByUsername(String username) throws Exception {
-        return userRepository.findByUsername(username).orElseThrow(() -> new NotFoundException(""));
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("사용자를 찾지 못했습니다."));
     }
 
     public boolean duplicatedByUsername(String username) {
